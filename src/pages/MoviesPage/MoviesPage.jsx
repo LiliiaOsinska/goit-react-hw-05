@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import s from "../MoviesPage/MoviesPage.module.css";
 import { fetchMoviesPage } from "../../api";
 import Loader from "../../components/Loader/Loader.jsx";
 import toast from "react-hot-toast";
 import MovieList from "../../components/MovieList/MovieList";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import s from "../MoviesPage/MoviesPage.module.css";
 
 // import toast from "react-hot-toast";
 
@@ -74,10 +74,10 @@ const MoviesPage = () => {
             </button>
           </form>
         </div>
+        <MovieList movies={movies} />
         {isLoading && <Loader />}
-        {!isLoading && <MovieList movies={movies} />}
         {isError && <ErrorMessage />}
-        {movies.length > 0 && (
+        {movies.length > 0 && !isLoading && (
           <button
             className={s.load_btn}
             onClick={loadMore}
