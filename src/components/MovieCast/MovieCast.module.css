@@ -1,0 +1,14 @@
+.section {
+  max-width: 1320px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.actors_gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}

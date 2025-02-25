@@ -1,0 +1,26 @@
+.section {
+  max-width: 1320px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.load_btn {
+  font-family: inherit;
+  color: rgb(8, 8, 8);
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  margin-left: 10px;
+  background-color: #eef1f3;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  height: 40px;
+  min-width: 91px;
+  margin-top: 10px;
+  position: fixed;
+  border: 1px solid #141515;
+}

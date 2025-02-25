@@ -1,0 +1,64 @@
+.section {
+  max-width: 1320px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.input_container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: #96989b;
+}
+
+.input {
+  display: inline-block;
+  height: 35px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid #0d0d0d;
+  font-size: 18px;
+  font-family: inherit;
+  padding: 0 15px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin: 15px auto;
+}
+
+.input:focus {
+  border-color: #2980b9; /* Синій відтінок */
+  box-shadow: 0 0 5px rgba(99, 156, 194, 0.5);
+}
+
+.btn {
+  cursor: pointer;
+  margin-left: 15px;
+  background-color: #ecf0f3;
+  border-radius: 8px;
+  border: 1px solid #141515;
+  height: 35px;
+  width: 70px;
+}
+
+.load_btn {
+  font-family: inherit;
+  color: rgb(8, 8, 8);
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  margin-left: 10px;
+  background-color: #eef1f3;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  height: 40px;
+  min-width: 91px;
+  margin-top: 10px;
+  position: fixed;
+  border: 1px solid #141515;
+}
