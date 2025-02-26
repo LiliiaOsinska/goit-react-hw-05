@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import s from "../MovieList/MovieList.module.css";
 
 const MovieList = ({ movies }) => {
   const defaultImg =
     "https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster";
+  const location = useLocation(); // початкова локація
 
   return (
     <>
@@ -11,7 +12,7 @@ const MovieList = ({ movies }) => {
         <ul className={s.gallery}>
           {movies.map((item, index) => (
             <li key={`${item.id}-${index}`}>
-              <Link to={`/movies/${item.id}`}>
+              <Link to={`/movies/${item.id}`} state={location}>
                 <img
                   src={
                     item.poster_path

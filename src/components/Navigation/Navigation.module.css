@@ -1,3 +1,9 @@
+.section {
+  max-width: 1320px;
+  padding-left: 30px;
+  padding-right: 10px;
+}
+
 .link {
   font-size: 24px;
   text-decoration: none;

@@ -16,7 +16,7 @@ const HomePage = () => {
       try {
         const { results } = await fetchHomePage(page);
         setMovies((prev) => [...prev, ...results]);
-        console.log(results); //повертається запит масив об'єктів
+        // console.log(results); //повертається запит масив об'єктів
       } catch (error) {
         console.error("Failed to fetch movie details:", error);
       } finally {

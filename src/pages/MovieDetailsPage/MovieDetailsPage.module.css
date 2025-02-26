@@ -30,3 +30,19 @@
 .outlet {
   background-color: gray;
 }
+
+.link {
+  font-size: 24px;
+  text-decoration: none;
+  color: #1c148e;
+}
+
+.nav_details {
+  display: flex;
+  gap: 20px;
+}
+
+.active {
+  color: red;
+  text-decoration: underline;
+}

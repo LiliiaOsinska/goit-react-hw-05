@@ -24,7 +24,7 @@ const MoviesPage = () => {
       setIsError(false);
       try {
         const results = await fetchMoviesPage(page, query);
-        console.log(results);
+        // console.log(results); //витягує масив по запиту з інпута
         setMovies((prev) => [...prev, ...results]);
       } catch {
         setIsError(true);
@@ -36,7 +36,7 @@ const MoviesPage = () => {
   }, [page, query]);
 
   const handleSetQuery = (newQuery) => {
-    console.log(newQuery);
+    // console.log(newQuery); //значення інпута
     setQuery(newQuery);
     setMovies([]); // при новому запиті видаляє дані старого
     setPage(1); // починає новий запит з 1 стр.

@@ -8,7 +8,7 @@ const buildLinkClass = ({ isActive }) => {
 
 const Navigation = () => {
   return (
-    <div>
+    <div className={s.section}>
       <nav className={s.nav}>
         <NavLink to="/" className={buildLinkClass}>
           Home
