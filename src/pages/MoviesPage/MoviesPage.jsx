@@ -5,16 +5,17 @@ import toast from "react-hot-toast";
 import MovieList from "../../components/MovieList/MovieList";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import s from "../MoviesPage/MoviesPage.module.css";
-
+import { useSearchParams } from "react-router-dom";
 // import toast from "react-hot-toast";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
-  const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [value, setValue] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams(); // використовуємо useSearchParams для роботи з
+  const query = searchParams.get("query") || ""; //зчитуємо query з URL
 
   useEffect(() => {
     if (!query) return;
@@ -25,7 +26,7 @@ const MoviesPage = () => {
       try {
         const results = await fetchMoviesPage(page, query);
         // console.log(results); //витягує масив по запиту з інпута
-        setMovies((prev) => [...prev, ...results]);
+        setMovies((prev) => (page === 1 ? results : [...prev, ...results]));
       } catch {
         setIsError(true);
       } finally {
@@ -35,9 +36,9 @@ const MoviesPage = () => {
     getDataMovies();
   }, [page, query]);
 
-  const handleSetQuery = (newQuery) => {
-    // console.log(newQuery); //значення інпута
-    setQuery(newQuery);
+  const handleSetQuery = (value) => {
+    searchParams.set("query", value);
+    setSearchParams(searchParams);
     setMovies([]); // при новому запиті видаляє дані старого
     setPage(1); // починає новий запит з 1 стр.
   };
@@ -55,6 +56,9 @@ const MoviesPage = () => {
   const loadMore = () => {
     setPage((prev) => prev + 1);
   };
+  // useEffect(() => {
+  //   setValue(query);
+  // }, [query]);
 
   return (
     <>
